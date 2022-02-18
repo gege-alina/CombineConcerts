@@ -9,13 +9,20 @@
 /* Begin PBXBuildFile section */
 		2E6FCB7527BE8C9B00E041F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCB7427BE8C9B00E041F9 /* AppDelegate.swift */; };
 		2E6FCB7727BE8C9B00E041F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCB7627BE8C9B00E041F9 /* SceneDelegate.swift */; };
-		2E6FCB7927BE8C9B00E041F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCB7827BE8C9B00E041F9 /* ViewController.swift */; };
 		2E6FCB7C27BE8C9B00E041F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6FCB7A27BE8C9B00E041F9 /* Main.storyboard */; };
 		2E6FCB7E27BE8CA800E041F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E6FCB7D27BE8CA800E041F9 /* Assets.xcassets */; };
 		2E6FCB8127BE8CA800E041F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6FCB7F27BE8CA800E041F9 /* LaunchScreen.storyboard */; };
 		2E6FCB8C27BE8CAA00E041F9 /* CombineConcertsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCB8B27BE8CAA00E041F9 /* CombineConcertsTests.swift */; };
 		2E6FCB9627BE8CAA00E041F9 /* CombineConcertsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCB9527BE8CAA00E041F9 /* CombineConcertsUITests.swift */; };
 		2E6FCB9827BE8CAA00E041F9 /* CombineConcertsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCB9727BE8CAA00E041F9 /* CombineConcertsUITestsLaunchTests.swift */; };
+		2E6FCBA827BE8F5D00E041F9 /* Concert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCBA627BE8F5C00E041F9 /* Concert.swift */; };
+		2E6FCBA927BE8F5D00E041F9 /* ConcertCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCBA727BE8F5D00E041F9 /* ConcertCellViewModel.swift */; };
+		2E6FCBAD27BE902C00E041F9 /* ConcertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCBAB27BE902C00E041F9 /* ConcertTableViewCell.swift */; };
+		2E6FCBAE27BE902C00E041F9 /* ConcertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6FCBAC27BE902C00E041F9 /* ConcertTableViewCell.xib */; };
+		2E6FCBB327BE907E00E041F9 /* AddConcertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCBB027BE907E00E041F9 /* AddConcertViewController.swift */; };
+		2E6FCBB427BE907E00E041F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCBB127BE907E00E041F9 /* ViewController.swift */; };
+		2E6FCBB527BE907E00E041F9 /* ViewConcert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCBB227BE907E00E041F9 /* ViewConcert.swift */; };
+		2E6FCBB727BE912D00E041F9 /* ImegeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FCBB627BE912D00E041F9 /* ImegeLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +46,6 @@
 		2E6FCB7127BE8C9B00E041F9 /* CombineConcerts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineConcerts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6FCB7427BE8C9B00E041F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E6FCB7627BE8C9B00E041F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E6FCB7827BE8C9B00E041F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E6FCB7B27BE8C9B00E041F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E6FCB7D27BE8CA800E041F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E6FCB8027BE8CA800E041F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,14 @@
 		2E6FCB9127BE8CAA00E041F9 /* CombineConcertsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineConcertsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6FCB9527BE8CAA00E041F9 /* CombineConcertsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineConcertsUITests.swift; sourceTree = "<group>"; };
 		2E6FCB9727BE8CAA00E041F9 /* CombineConcertsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineConcertsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E6FCBA627BE8F5C00E041F9 /* Concert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concert.swift; sourceTree = "<group>"; };
+		2E6FCBA727BE8F5D00E041F9 /* ConcertCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcertCellViewModel.swift; sourceTree = "<group>"; };
+		2E6FCBAB27BE902C00E041F9 /* ConcertTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcertTableViewCell.swift; sourceTree = "<group>"; };
+		2E6FCBAC27BE902C00E041F9 /* ConcertTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConcertTableViewCell.xib; sourceTree = "<group>"; };
+		2E6FCBB027BE907E00E041F9 /* AddConcertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConcertViewController.swift; sourceTree = "<group>"; };
+		2E6FCBB127BE907E00E041F9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E6FCBB227BE907E00E041F9 /* ViewConcert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConcert.swift; sourceTree = "<group>"; };
+		2E6FCBB627BE912D00E041F9 /* ImegeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImegeLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +113,16 @@
 		2E6FCB7327BE8C9B00E041F9 /* CombineConcerts */ = {
 			isa = PBXGroup;
 			children = (
+				2E6FCBAF27BE905D00E041F9 /* VCs */,
+				2E6FCBAA27BE8F7000E041F9 /* Cells */,
+				2E6FCBA527BE8F2A00E041F9 /* Models */,
 				2E6FCB7427BE8C9B00E041F9 /* AppDelegate.swift */,
 				2E6FCB7627BE8C9B00E041F9 /* SceneDelegate.swift */,
-				2E6FCB7827BE8C9B00E041F9 /* ViewController.swift */,
 				2E6FCB7A27BE8C9B00E041F9 /* Main.storyboard */,
 				2E6FCB7D27BE8CA800E041F9 /* Assets.xcassets */,
 				2E6FCB7F27BE8CA800E041F9 /* LaunchScreen.storyboard */,
 				2E6FCB8227BE8CA800E041F9 /* Info.plist */,
+				2E6FCBB627BE912D00E041F9 /* ImegeLoader.swift */,
 			);
 			path = CombineConcerts;
 			sourceTree = "<group>";
@@ -125,6 +142,34 @@
 				2E6FCB9727BE8CAA00E041F9 /* CombineConcertsUITestsLaunchTests.swift */,
 			);
 			path = CombineConcertsUITests;
+			sourceTree = "<group>";
+		};
+		2E6FCBA527BE8F2A00E041F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E6FCBA627BE8F5C00E041F9 /* Concert.swift */,
+				2E6FCBA727BE8F5D00E041F9 /* ConcertCellViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E6FCBAA27BE8F7000E041F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2E6FCBAB27BE902C00E041F9 /* ConcertTableViewCell.swift */,
+				2E6FCBAC27BE902C00E041F9 /* ConcertTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2E6FCBAF27BE905D00E041F9 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				2E6FCBB027BE907E00E041F9 /* AddConcertViewController.swift */,
+				2E6FCBB227BE907E00E041F9 /* ViewConcert.swift */,
+				2E6FCBB127BE907E00E041F9 /* ViewController.swift */,
+			);
+			path = VCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +278,7 @@
 			files = (
 				2E6FCB8127BE8CA800E041F9 /* LaunchScreen.storyboard in Resources */,
 				2E6FCB7E27BE8CA800E041F9 /* Assets.xcassets in Resources */,
+				2E6FCBAE27BE902C00E041F9 /* ConcertTableViewCell.xib in Resources */,
 				2E6FCB7C27BE8C9B00E041F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +304,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E6FCB7927BE8C9B00E041F9 /* ViewController.swift in Sources */,
+				2E6FCBB327BE907E00E041F9 /* AddConcertViewController.swift in Sources */,
+				2E6FCBAD27BE902C00E041F9 /* ConcertTableViewCell.swift in Sources */,
+				2E6FCBA927BE8F5D00E041F9 /* ConcertCellViewModel.swift in Sources */,
+				2E6FCBB727BE912D00E041F9 /* ImegeLoader.swift in Sources */,
 				2E6FCB7527BE8C9B00E041F9 /* AppDelegate.swift in Sources */,
+				2E6FCBB527BE907E00E041F9 /* ViewConcert.swift in Sources */,
+				2E6FCBA827BE8F5D00E041F9 /* Concert.swift in Sources */,
+				2E6FCBB427BE907E00E041F9 /* ViewController.swift in Sources */,
 				2E6FCB7727BE8C9B00E041F9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
