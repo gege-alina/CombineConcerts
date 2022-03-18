@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sectionTitle: UILabel!
     
+    private var subscriptions = Set<AnyCancellable>()
     //private let disposeBag = DisposeBag()
     //private var concerts = BehaviorRelay<[Concert]>(value: [])
     private var concerts = Array<Concert>()
@@ -23,14 +24,13 @@ class ViewController: UIViewController {
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        concerts = [Concert(band: "TMJ")]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navigationControler = segue.destination as? UINavigationController,
            let destination = navigationControler.viewControllers.first as? AddConcertViewController {
             
-            _ = destination.concertSubjectObservable
+            destination.concertSubject
                 .sink(receiveCompletion: { _ in },
                       receiveValue: { [weak self] concert in
                     self?.concerts.append(concert)
@@ -38,32 +38,26 @@ class ViewController: UIViewController {
                         self?.tableView.reloadData()
                     }
                 })
-//        destination.concertSubjectObservable
-//            .subscribe(onNext: { concert in
-//                var myConcerts = self.concerts.value
-//                myConcerts.append(concert)
-//                self.concerts.accept(myConcerts)
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//            })
-//            .disposed(by: disposeBag)
+                .store(in: &subscriptions)
+
         } else if let identifier = segue.identifier, identifier == "viewConcert",
                   let destination = segue.destination as? ViewConcert, let index = sender as? IndexPath {
             let concert = concerts[index.row]
             destination.viewModel = concert
-//            destination.concertPaid
-//                .subscribe(onNext: { _ in
-//                    var myConcert = self.concerts.value[index.row]
-//                    myConcert.isPaid = true
-//                    var myConcerts = self.concerts.value
-//                    myConcerts[index.row] = myConcert
-//                    self.concerts.accept(myConcerts)
-//                    DispatchQueue.main.async {
-//                        self.tableView.reloadData()
-//                    }
-//                })
-//                .disposed(by: disposeBag)
+            
+            destination.paySubject
+                .sink(receiveCompletion: { _ in },
+                      receiveValue: { [weak self] status in
+                    var myConcert = self?.concerts[index.row]
+                    myConcert?.isPaid = status == .paid
+                    if let concert = myConcert {
+                        self?.concerts[index.row] = concert
+                    }
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                })
+                .store(in: &subscriptions)
         }
     }
 

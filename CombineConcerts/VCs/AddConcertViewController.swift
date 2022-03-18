@@ -18,16 +18,8 @@ class AddConcertViewController: UIViewController {
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var addPosterButton: UIButton!
     
-    private let concertSubject = PassthroughSubject<Concert, Error>()
-//    private let concertSubject = PublishSubject<Concert>()
-//    private let disposeBag = DisposeBag()
-    
-        var concertSubjectObservable: AnyPublisher<Concert, Error> {
-            concertSubject.eraseToAnyPublisher()
-        }
-//    var concertSubjectObservable: Observable<Concert> {
-//        concertSubject.asObservable()
-//    }
+    let concertSubject = PassthroughSubject<Concert, Error>()
+    private var subscriptions = Set<AnyCancellable>()
     
     @IBAction func save() {
         let concert = Concert(band: bandTextField.text ?? " ", place: placeTextField.text)
@@ -50,7 +42,7 @@ class AddConcertViewController: UIViewController {
                     print("image set")
                 }
             })
-            //.store(in: <#T##Set<Combine.AnyCancellable>#>)
+            .store(in: &subscriptions)
     }
     
     override func viewDidLoad() {

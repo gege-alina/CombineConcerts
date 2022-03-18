@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+enum State {
+    case paid, notPaid
+}
+
 struct Concert {
     var bandName: String
     var placeOfConcert: String?
@@ -20,6 +24,7 @@ struct Concert {
         self.placeOfConcert = place
         self.dateOfConcert = date
         self.poster = poster
+        self.isPaid = false
     }
     
     func getConcertCellVM() -> ConcertCellViewModel {

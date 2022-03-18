@@ -20,12 +20,7 @@ class ViewConcert: UIViewController {
     var viewModel: Concert?
     
     let concertPaidTap = PassthroughSubject<Void, Error>()
-   // let concertPaidTapped = PublishSubject<Void>()
-    
-    //var concertPaid = AnyPublisher<Void, Error>
-//    var concertPaid: Observable<Void> {
-//        //concertPaidTapped.asObservable()
-//    }
+    let paySubject = CurrentValueSubject<State, Error>(.notPaid)
     
     init(with viewModel: Concert, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -44,15 +39,23 @@ class ViewConcert: UIViewController {
     
     @IBAction func payButtonTapped() {
         payButton.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
-        //concertPaidTapped.onNext(())
-        concertPaidTap.send()
+        
+        if paySubject.value == .notPaid {
+            paySubject.value = .paid
+            viewModel?.isPaid = true
+        } else {
+            paySubject.value = .notPaid
+            viewModel?.isPaid = false
+        }
+        updateUI()
     }
     
     private func updateUI() {
-        bandTextField.text = viewModel?.bandName
-        placeTextField.text = viewModel?.placeOfConcert
+        guard let viewModel = viewModel else { return }
+        bandTextField.text = viewModel.bandName
+        placeTextField.text = viewModel.placeOfConcert
         let dateFormatter = DateFormatter()
-        timeTextField.text = dateFormatter.string(from: viewModel?.dateOfConcert ?? Date() + 7)
-        payButton.setBackgroundImage( viewModel?.isPaid ?? false ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
+        timeTextField.text = dateFormatter.string(from: viewModel.dateOfConcert ?? Date() + 7)
+        payButton.setBackgroundImage( viewModel.isPaid ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
     }
 }
